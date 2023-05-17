@@ -4,72 +4,45 @@ namespace Credit_Calculator
 {
     public partial class CreditCalculatorForm : Form
     {
+        private readonly LoanCalculator _loanCalculator;
+        private readonly LoanTermCalculator _loanTermCalculator;
+        private readonly InputValidator _inputValidator;
+
         public CreditCalculatorForm()
         {
             InitializeComponent();
             loanTermcomboBox.SelectedIndex = 0;
+            _loanCalculator = new LoanCalculator();
+            _loanTermCalculator = new LoanTermCalculator();
+            _inputValidator = new InputValidator();
         }
 
         private void resultButton_Click(object sender, EventArgs e)
         {
-            double loanAmount = 0;
-            double interestRate = 0;
-            double.TryParse(loanAmountTextBox.Text, out loanAmount);
-            double.TryParse(interestRateTextBox.Text, out interestRate);
-            double loanTerm = GetLoanTerm();
-            double monthlyInterestRate = interestRate / 100 / 12;
-            double monthlyPayment = CalculateMonthlyPayment(loanAmount, loanTerm, monthlyInterestRate);
-            double totalInterest = CalculateTotalInterest(loanAmount, loanTerm, monthlyPayment);
-            montlyPaymentTextBox.Text = monthlyPayment.ToString("C");
-            totalInterestTextBox.Text = totalInterest.ToString("C");
-        }
-
-        public double CalculateMonthlyPayment(double loanAmount, double loanTerm, double monthlyInterestRate)
-        {
-            double monthlyPayment;
-            double denominator = Math.Pow(1 + monthlyInterestRate, loanTerm * 12) - 1;
-            monthlyPayment = (loanAmount * monthlyInterestRate * Math.Pow(1 + monthlyInterestRate, loanTerm * 12)) / denominator;
-            return Math.Round(monthlyPayment);
-        }
-
-        public double CalculateTotalInterest(double loanAmount, double loanTerm, double monthlyPayment)
-        {
-            double totalInterest;
-            totalInterest = (monthlyPayment * loanTerm * 12) - loanAmount;
-            return Math.Round(totalInterest);
-        }
-
-        private double GetLoanTerm()
-        {
-            double loanTerm = 0;
-            string? selectedItem = loanTermcomboBox.SelectedItem as string;
-            if (selectedItem.Contains("мес€ц"))
+            if (_inputValidator.IsValidLoanAmountInput(loanAmountTextBox.Text) && _inputValidator.IsValidInterestRateInput(interestRateTextBox.Text))
             {
-                double months = double.Parse(selectedItem.Split()[0]);
-                loanTerm = months / 12;
+                decimal loanAmount = decimal.Parse(loanAmountTextBox.Text);
+                decimal interestRate = decimal.Parse(interestRateTextBox.Text);
+                decimal loanTerm = _loanTermCalculator.GetLoanTerm(loanTermcomboBox.SelectedItem as string);
+                decimal monthlyInterestRate = interestRate / 100 / 12;
+                decimal monthlyPayment = _loanCalculator.CalculateMonthlyPayment(loanAmount, loanTerm, monthlyInterestRate);
+                decimal totalInterest = _loanCalculator.CalculateTotalInterest(loanAmount, loanTerm, monthlyPayment);
+                montlyPaymentTextBox.Text = monthlyPayment.ToString("C");
+                totalInterestTextBox.Text = totalInterest.ToString("C");
             }
-            else if (selectedItem.Contains("год") || selectedItem.Contains("лет"))
+            else
             {
-                double years = double.Parse(selectedItem.Split()[0]);
-                loanTerm = years;
+                MessageBox.Show("¬ведите верные значени€.");
             }
-            return loanTerm;
         }
-
         private void loanAmountTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
+            e.Handled = !_inputValidator.IsValidLoanAmountInput(e.KeyChar.ToString());
         }
 
         private void interestRateTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
+            e.Handled = !_inputValidator.IsValidInterestRateInput(e.KeyChar.ToString());
         }
     }
 }
