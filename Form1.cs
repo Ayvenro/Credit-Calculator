@@ -1,8 +1,8 @@
 namespace Credit_Calculator
 {
-    public partial class Form1 : Form
+    public partial class CreditCalculatorForm : Form
     {
-        public Form1()
+        public CreditCalculatorForm()
         {
             InitializeComponent();
         }
