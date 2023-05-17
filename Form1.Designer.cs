@@ -124,9 +124,9 @@
             totalInterestLabel.AutoSize = true;
             totalInterestLabel.Location = new Point(118, 157);
             totalInterestLabel.Name = "totalInterestLabel";
-            totalInterestLabel.Size = new Size(106, 15);
+            totalInterestLabel.Size = new Size(129, 15);
             totalInterestLabel.TabIndex = 10;
-            totalInterestLabel.Text = "Общая переплата";
+            totalInterestLabel.Text = "Переплата по кредиту";
             // 
             // resultButton
             // 
