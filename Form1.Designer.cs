@@ -39,6 +39,7 @@
             totalInterestTextBox = new TextBox();
             montlyPaymentLabel = new Label();
             totalInterestLabel = new Label();
+            resultButton = new Button();
             SuspendLayout();
             // 
             // loanAmountTextBox
@@ -47,6 +48,7 @@
             loanAmountTextBox.Name = "loanAmountTextBox";
             loanAmountTextBox.Size = new Size(100, 23);
             loanAmountTextBox.TabIndex = 0;
+            loanAmountTextBox.KeyPress += loanAmountTextBox_KeyPress;
             // 
             // loanAmountLabel
             // 
@@ -63,6 +65,7 @@
             interestRateTextBox.Name = "interestRateTextBox";
             interestRateTextBox.Size = new Size(100, 23);
             interestRateTextBox.TabIndex = 2;
+            interestRateTextBox.KeyPress += interestRateTextBox_KeyPress;
             // 
             // interestRateLabel
             // 
@@ -79,6 +82,7 @@
             loanTermTextBox.Name = "loanTermTextBox";
             loanTermTextBox.Size = new Size(100, 23);
             loanTermTextBox.TabIndex = 4;
+            loanTermTextBox.KeyPress += loanTermTextBox_KeyPress;
             // 
             // loanTermLabel
             // 
@@ -126,15 +130,26 @@
             totalInterestLabel.AutoSize = true;
             totalInterestLabel.Location = new Point(118, 157);
             totalInterestLabel.Name = "totalInterestLabel";
-            totalInterestLabel.Size = new Size(97, 15);
+            totalInterestLabel.Size = new Size(95, 15);
             totalInterestLabel.TabIndex = 10;
-            totalInterestLabel.Text = "Общий прцоент";
+            totalInterestLabel.Text = "Общая выплата";
+            // 
+            // resultButton
+            // 
+            resultButton.Location = new Point(12, 183);
+            resultButton.Name = "resultButton";
+            resultButton.Size = new Size(75, 23);
+            resultButton.TabIndex = 11;
+            resultButton.Text = "Расчитать";
+            resultButton.UseVisualStyleBackColor = true;
+            resultButton.Click += resultButton_Click;
             // 
             // CreditCalculatorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(resultButton);
             Controls.Add(totalInterestLabel);
             Controls.Add(montlyPaymentLabel);
             Controls.Add(totalInterestTextBox);
@@ -166,5 +181,6 @@
         private TextBox totalInterestTextBox;
         private Label montlyPaymentLabel;
         private Label totalInterestLabel;
+        private Button resultButton;
     }
 }
