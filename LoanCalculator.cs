@@ -7,14 +7,14 @@
             decimal monthlyPayment;
             decimal denominator = (decimal)Math.Pow(1 + (double)monthlyInterestRate, (double)loanTerm * 12) - 1;
             monthlyPayment = (loanAmount * monthlyInterestRate * (decimal)Math.Pow(1 + (double)monthlyInterestRate, (double)loanTerm * 12)) / denominator;
-            return monthlyPayment;
+            return Math.Round(monthlyPayment);
         }
 
         public decimal CalculateTotalInterest(decimal loanAmount, decimal loanTerm, decimal monthlyPayment)
         {
             decimal totalInterest;
             totalInterest = (monthlyPayment * loanTerm * 12) - loanAmount;
-            return totalInterest;
+            return Math.Round(totalInterest);
         }
     }
 }

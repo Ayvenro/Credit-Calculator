@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Credit_Calculator
+﻿namespace Credit_Calculator
 {
     internal class InputValidator
     {

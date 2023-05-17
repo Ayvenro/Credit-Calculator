@@ -1,3 +1,6 @@
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Credit Calculator Tests")]
 namespace Credit_Calculator
 {
     internal static class Program
