@@ -12,8 +12,10 @@ namespace Credit_Calculator
 
         private void resultButton_Click(object sender, EventArgs e)
         {
-            double loanAmount = Convert.ToDouble(loanAmountTextBox.Text);
-            double interestRate = Convert.ToDouble(interestRateTextBox.Text);
+            double loanAmount = 0;
+            double interestRate = 0;
+            double.TryParse(loanAmountTextBox.Text, out loanAmount);
+            double.TryParse(interestRateTextBox.Text, out interestRate);
             double loanTerm = GetLoanTerm();
             double monthlyInterestRate = interestRate / 100 / 12;
             double monthlyPayment = CalculateMonthlyPayment(loanAmount, loanTerm, monthlyInterestRate);
