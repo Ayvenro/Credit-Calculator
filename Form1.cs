@@ -22,19 +22,19 @@ namespace Credit_Calculator
             totalInterestTextBox.Text = totalInterest.ToString("C");
         }
 
-        private double CalculateMonthlyPayment(double loanAmount, double loanTerm, double monthlyInterestRate)
+        public double CalculateMonthlyPayment(double loanAmount, double loanTerm, double monthlyInterestRate)
         {
             double monthlyPayment;
             double denominator = Math.Pow(1 + monthlyInterestRate, loanTerm * 12) - 1;
             monthlyPayment = (loanAmount * monthlyInterestRate * Math.Pow(1 + monthlyInterestRate, loanTerm * 12)) / denominator;
-            return monthlyPayment;
+            return Math.Round(monthlyPayment);
         }
 
-        private double CalculateTotalInterest(double loanAmount, double loanTerm, double monthlyPayment)
+        public double CalculateTotalInterest(double loanAmount, double loanTerm, double monthlyPayment)
         {
             double totalInterest;
             totalInterest = (monthlyPayment * loanTerm * 12) - loanAmount;
-            return totalInterest;
+            return Math.Round(totalInterest);
         }
 
         private double GetLoanTerm()
