@@ -32,7 +32,6 @@
             loanAmountLabel = new Label();
             interestRateTextBox = new TextBox();
             interestRateLabel = new Label();
-            loanTermTextBox = new TextBox();
             loanTermLabel = new Label();
             label1 = new Label();
             montlyPaymentTextBox = new TextBox();
@@ -40,6 +39,7 @@
             montlyPaymentLabel = new Label();
             totalInterestLabel = new Label();
             resultButton = new Button();
+            loanTermcomboBox = new ComboBox();
             SuspendLayout();
             // 
             // loanAmountTextBox
@@ -75,14 +75,6 @@
             interestRateLabel.Size = new Size(112, 15);
             interestRateLabel.TabIndex = 3;
             interestRateLabel.Text = "Процентная ставка";
-            // 
-            // loanTermTextBox
-            // 
-            loanTermTextBox.Location = new Point(12, 70);
-            loanTermTextBox.Name = "loanTermTextBox";
-            loanTermTextBox.Size = new Size(100, 23);
-            loanTermTextBox.TabIndex = 4;
-            loanTermTextBox.KeyPress += loanTermTextBox_KeyPress;
             // 
             // loanTermLabel
             // 
@@ -144,11 +136,21 @@
             resultButton.UseVisualStyleBackColor = true;
             resultButton.Click += resultButton_Click;
             // 
+            // loanTermcomboBox
+            // 
+            loanTermcomboBox.FormattingEnabled = true;
+            loanTermcomboBox.Items.AddRange(new object[] { "1 месяц", "3 месяца", "6 месяцев", "9 месяцев", "1 год", "1.5 года", "2 года", "3 года", "4 года", "5 лет", "6 лет", "7 лет", "10 лет", "15 лет", "20 лет", "25 лет", "30 лет" });
+            loanTermcomboBox.Location = new Point(12, 70);
+            loanTermcomboBox.Name = "loanTermcomboBox";
+            loanTermcomboBox.Size = new Size(100, 23);
+            loanTermcomboBox.TabIndex = 12;
+            // 
             // CreditCalculatorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(loanTermcomboBox);
             Controls.Add(resultButton);
             Controls.Add(totalInterestLabel);
             Controls.Add(montlyPaymentLabel);
@@ -156,7 +158,6 @@
             Controls.Add(montlyPaymentTextBox);
             Controls.Add(label1);
             Controls.Add(loanTermLabel);
-            Controls.Add(loanTermTextBox);
             Controls.Add(interestRateLabel);
             Controls.Add(interestRateTextBox);
             Controls.Add(loanAmountLabel);
@@ -174,7 +175,6 @@
         private Label loanAmountLabel;
         private TextBox interestRateTextBox;
         private Label interestRateLabel;
-        private TextBox loanTermTextBox;
         private Label loanTermLabel;
         private Label label1;
         private TextBox montlyPaymentTextBox;
@@ -182,5 +182,6 @@
         private Label montlyPaymentLabel;
         private Label totalInterestLabel;
         private Button resultButton;
+        private ComboBox loanTermcomboBox;
     }
 }
