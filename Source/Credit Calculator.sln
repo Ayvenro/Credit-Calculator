@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Credit Calculator", "Credit Calculator.csproj", "{F0873991-4FC7-4457-8FDD-3249F41BE521}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Credit Calculator", "Credit Calculator.csproj", "{F0873991-4FC7-4457-8FDD-3249F41BE521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Credit Calculator Tests", "..\Credit Calculator Tests\Credit Calculator Tests.csproj", "{7202CEDA-5D4E-4971-9AC5-9038D63633EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Credit Calculator Tests", "..\CreditCalculatorTests\Credit Calculator Tests.csproj", "{E3AFFF51-FD00-405D-AF11-46A583AFEBF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{F0873991-4FC7-4457-8FDD-3249F41BE521}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0873991-4FC7-4457-8FDD-3249F41BE521}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0873991-4FC7-4457-8FDD-3249F41BE521}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7202CEDA-5D4E-4971-9AC5-9038D63633EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7202CEDA-5D4E-4971-9AC5-9038D63633EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7202CEDA-5D4E-4971-9AC5-9038D63633EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7202CEDA-5D4E-4971-9AC5-9038D63633EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3AFFF51-FD00-405D-AF11-46A583AFEBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3AFFF51-FD00-405D-AF11-46A583AFEBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3AFFF51-FD00-405D-AF11-46A583AFEBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3AFFF51-FD00-405D-AF11-46A583AFEBF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
