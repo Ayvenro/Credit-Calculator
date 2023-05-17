@@ -98,6 +98,7 @@
             // 
             montlyPaymentTextBox.Location = new Point(12, 125);
             montlyPaymentTextBox.Name = "montlyPaymentTextBox";
+            montlyPaymentTextBox.ReadOnly = true;
             montlyPaymentTextBox.Size = new Size(100, 23);
             montlyPaymentTextBox.TabIndex = 7;
             // 
@@ -105,6 +106,7 @@
             // 
             totalInterestTextBox.Location = new Point(12, 154);
             totalInterestTextBox.Name = "totalInterestTextBox";
+            totalInterestTextBox.ReadOnly = true;
             totalInterestTextBox.Size = new Size(100, 23);
             totalInterestTextBox.TabIndex = 8;
             // 
@@ -122,9 +124,9 @@
             totalInterestLabel.AutoSize = true;
             totalInterestLabel.Location = new Point(118, 157);
             totalInterestLabel.Name = "totalInterestLabel";
-            totalInterestLabel.Size = new Size(95, 15);
+            totalInterestLabel.Size = new Size(106, 15);
             totalInterestLabel.TabIndex = 10;
-            totalInterestLabel.Text = "Общая выплата";
+            totalInterestLabel.Text = "Общая переплата";
             // 
             // resultButton
             // 
@@ -138,8 +140,9 @@
             // 
             // loanTermcomboBox
             // 
+            loanTermcomboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             loanTermcomboBox.FormattingEnabled = true;
-            loanTermcomboBox.Items.AddRange(new object[] { "1 месяц", "3 месяца", "6 месяцев", "9 месяцев", "1 год", "1.5 года", "2 года", "3 года", "4 года", "5 лет", "6 лет", "7 лет", "10 лет", "15 лет", "20 лет", "25 лет", "30 лет" });
+            loanTermcomboBox.Items.AddRange(new object[] { "1 месяц", "3 месяца", "6 месяцев", "9 месяцев", "1 год", "1,5 года", "2 года", "3 года", "4 года", "5 лет", "6 лет", "7 лет", "10 лет", "15 лет", "20 лет", "25 лет", "30 лет" });
             loanTermcomboBox.Location = new Point(12, 70);
             loanTermcomboBox.Name = "loanTermcomboBox";
             loanTermcomboBox.Size = new Size(100, 23);
@@ -149,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(317, 222);
             Controls.Add(loanTermcomboBox);
             Controls.Add(resultButton);
             Controls.Add(totalInterestLabel);

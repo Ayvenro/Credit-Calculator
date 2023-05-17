@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace Credit_Calculator
 {
     public partial class CreditCalculatorForm : Form
@@ -15,7 +17,9 @@ namespace Credit_Calculator
             double loanTerm = GetLoanTerm();
             double monthlyInterestRate = interestRate / 100 / 12;
             double monthlyPayment = CalculateMonthlyPayment(loanAmount, loanTerm, monthlyInterestRate);
+            double totalInterest = CalculateTotalInterest(loanAmount, loanTerm, monthlyPayment);
             montlyPaymentTextBox.Text = monthlyPayment.ToString("C");
+            totalInterestTextBox.Text = totalInterest.ToString("C");
         }
 
         private double CalculateMonthlyPayment(double loanAmount, double loanTerm, double monthlyInterestRate)
@@ -26,16 +30,23 @@ namespace Credit_Calculator
             return monthlyPayment;
         }
 
+        private double CalculateTotalInterest(double loanAmount, double loanTerm, double monthlyPayment)
+        {
+            double totalInterest;
+            totalInterest = (monthlyPayment * loanTerm * 12) - loanAmount;
+            return totalInterest;
+        }
+
         private double GetLoanTerm()
         {
             double loanTerm = 0;
-            string selectedItem = loanTermcomboBox.SelectedItem as string;
+            string? selectedItem = loanTermcomboBox.SelectedItem as string;
             if (selectedItem.Contains("мес€ц"))
             {
                 double months = double.Parse(selectedItem.Split()[0]);
                 loanTerm = months / 12;
             }
-            else if (selectedItem.Contains("год" ) || selectedItem.Contains("лет"))
+            else if (selectedItem.Contains("год") || selectedItem.Contains("лет"))
             {
                 double years = double.Parse(selectedItem.Split()[0]);
                 loanTerm = years;
