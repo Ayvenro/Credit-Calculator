@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Credit Calculator", "Credit Calculator.csproj", "{F0873991-4FC7-4457-8FDD-3249F41BE521}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditCalculator", "CreditCalculator.csproj", "{F0873991-4FC7-4457-8FDD-3249F41BE521}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Credit Calculator Tests", "..\CreditCalculatorTests\Credit Calculator Tests.csproj", "{E3AFFF51-FD00-405D-AF11-46A583AFEBF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditCalculator.Tests", "..\CreditCalculatorTests\CreditCalculator.Tests.csproj", "{E3AFFF51-FD00-405D-AF11-46A583AFEBF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
