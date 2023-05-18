@@ -19,8 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Credit Calculator.csproj" />
-    <ProjectReference Include="..\Source\Credit Calculator.csproj" />
+    <ProjectReference Include="..\CreditCalculator\CreditCalculator.csproj" />
   </ItemGroup>
 
   <ItemGroup>

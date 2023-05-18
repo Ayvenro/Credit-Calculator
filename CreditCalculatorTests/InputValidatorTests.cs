@@ -22,7 +22,7 @@
         [Test]
         public void IsValidLoanAmountInput_InputIsNull_ReturnsFalse()
         {
-            string input = null;
+            string? input = null;
             bool result = _inputValidator.IsValidLoanAmountInput(input);
             Assert.IsFalse(result);
         }
